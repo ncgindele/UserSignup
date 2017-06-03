@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>UserSignup</title>
+</head>
+<body>
+    <h1 style="color:green; font-family:sans-serif;">Signup</h1>
+    <form method="post">
+        <p style="display:inline;">Username
+            <input type="text" name="username" size="15" style="display:inline;" value={% if username: %}{{username}}{% else: %}""{% endif %} />
+        </p>
+        {% if username == False and username is defined: %}
+        <p style="display:inline; color:red;">
+            That's not a valid username.
+        </p>
+        {% endif %}
+        <p></p>
+        <p style="display:inline;">Password
+            <input type="password" name="password" size="15" style="display:inline;" value={% if password: %}{{password}}{% else: %}""{% endif %} />
+        </p>
+        {% if password == False and password is defined: %}
+        <p style="display:inline; color:red;">
+            That's not a valid password.
+        </p>
+        {% endif %}
+        <p></p>
+        <p style="display:inline;">Verify Password
+            <input type="password" name="verify" style="display:inline;" size="15" value={% if verify: %}{{verify}}{% else: %}""{% endif %} />
+        </p>
+        {% if verify == False and verify is defined: %}
+        <p style="display:inline; color:red;">
+            Your passwords did not match.
+        </p>
+        {% endif %}
+        <p></p>
+        <p style="display:inline;">Email (optional)
+            <input type"text" name="email" size="15" style="display:inline;" value={% if email: %}{{email}}{% else: %}""{% endif %} />
+        </p>
+        {% if email == False and email is defined: %}
+        <p style="display:inline; color:red;">
+            That's not a valid email.
+        </p>
+        {% endif %}
+        <p></p>
+        <input type="submit"/>
+    </form>
+</body>
